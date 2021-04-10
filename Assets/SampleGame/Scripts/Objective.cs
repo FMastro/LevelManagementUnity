@@ -13,7 +13,7 @@ namespace SampleGame
 
         // is the objective complete?
         private bool _isComplete;
-        public bool IsComplete { get { return _isComplete; } }
+        public bool IsComplete => _isComplete;
 
         // set the objective to complete
         public void CompleteObjective()
@@ -24,7 +24,7 @@ namespace SampleGame
         // when the player touches the trigger...
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == _playerTag)
+            if (other.CompareTag(_playerTag))
             {
                 CompleteObjective();
             }
